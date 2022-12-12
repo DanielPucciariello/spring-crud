@@ -21,8 +21,8 @@ public class Restaurant {
     private String direccion;
     private String telefono;
 
-    @OneToMany (mappedBy = "restaurant")
-    private Set<Plato> plato;
+    @OneToMany (mappedBy = "restaurant", cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
+    private Set<Plato> platos;
 
     public Restaurant(String nombre, String direccion, String telefono) {
         this.nombre = nombre;
@@ -30,5 +30,15 @@ public class Restaurant {
         this.telefono = telefono;
     }
 
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", platos=" + platos +
+                '}';
+    }
 
 }

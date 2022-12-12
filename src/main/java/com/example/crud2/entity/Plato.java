@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "plato")
+@Table(name = "platos")
 public class Plato {
 
     @Id
@@ -18,22 +18,33 @@ public class Plato {
     private Long id;
     private String nombre;
     private Long precio;
-    private Long calorias;
+    private int calorias;
 
-    public Plato (String nombre, Long precio, Long calorias) {
+    @Override
+    public String toString() {
+        return "Plato{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", precio=" + precio +
+                ", calorias=" + calorias +
+                ", restaurant=" + restaurant +
+                '}';
+    }
+
+    public Plato (String nombre, Long precio, int calorias) {
         this.nombre = nombre;
         this.precio = precio;
         this.calorias = calorias;
         }
 
-    public Plato(String nombre, Long precio, Long calorias, Restaurant restaurant) {
+    public Plato(String nombre, Long precio, int calorias, Restaurant restaurant) {
         this.nombre = nombre;
         this.precio = precio;
         this.calorias = calorias;
         this.restaurant = restaurant;
     }
 
-    @ManyToOne
+    @ManyToOne (cascade = CascadeType.PERSIST)
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 }

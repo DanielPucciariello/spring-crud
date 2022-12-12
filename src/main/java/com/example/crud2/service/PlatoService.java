@@ -16,9 +16,5 @@ public class PlatoService implements IPlatoService{
 
     }
 
-    public void crearPlato (PlatoDto platoDto, Long restaurant_id)
-    {
-       Plato plato = new Plato(platoDto.getNombre(),platoDto.getPrecio(),platoDto.getCalorias(),restaurant_id);
-        PlatoRepository.save(plato);
-    }
+
 }

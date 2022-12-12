@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -17,11 +19,13 @@ public class RestaurantDto {
     private String direccion;
     private String telefono;
 
-    public RestaurantDto(String nombre, String direccion, String telefono) {
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.telefono = telefono;
-    }
+    private Set<PlatoDto> platos;
+
+    //public RestaurantDto(String nombre, String direccion, String telefono) {
+    //    this.nombre = nombre;
+     //   this.direccion = direccion;
+     //   this.telefono = telefono;
+    //}
 }
 
 

@@ -14,9 +14,9 @@ public class PlatoDto {
     private Long id;
     private String nombre;
     private Long precio;
-    private Long calorias;
+    private int calorias;
 
-    public PlatoDto(String nombre, Long precio, Long calorias) {
+    public PlatoDto(String nombre, Long precio, int calorias) {
         this.nombre = nombre;
         this.precio = precio;
         this.calorias = calorias;
