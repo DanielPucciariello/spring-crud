@@ -1,5 +1,6 @@
 package com.example.crud2.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import java.util.Set;
 @Entity
 @Table(name = "restaurant")
 @NoArgsConstructor
+@AllArgsConstructor
 public class Restaurant {
 
     @Id
@@ -28,6 +30,13 @@ public class Restaurant {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
+    }
+
+    public Restaurant(String nombre, String direccion, String telefono, Set<Plato> platos) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.platos = platos;
     }
 
     @Override

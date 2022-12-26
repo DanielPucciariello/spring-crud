@@ -1,4 +1,4 @@
-package com.example.crud2.dto;
+package com.example.crud2.dto.response;
 
 import lombok.Getter;
 import lombok.Setter;

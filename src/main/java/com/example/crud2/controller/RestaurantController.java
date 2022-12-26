@@ -1,15 +1,15 @@
 package com.example.crud2.controller;
 
 
-import com.example.crud2.dto.PlatoDto;
-import com.example.crud2.dto.RestaurantDto;
+import com.example.crud2.dto.request.PlatoDto;
+import com.example.crud2.dto.request.RestaurantDto;
 import com.example.crud2.service.IRestaurantService;
 import com.example.crud2.service.RestaurantService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.validation.Valid;
 
 @RestController
 public class RestaurantController {
@@ -22,14 +22,13 @@ public class RestaurantController {
     }
 
     @PostMapping("/crearRestaurant")
-    public ResponseEntity<?> crearRestaurant(@RequestBody RestaurantDto restaurantDto){
+    public ResponseEntity<?> crearRestaurant(@Valid @RequestBody RestaurantDto restaurantDto){
         return new ResponseEntity<>(restaurantService.crearRestaurant(restaurantDto), HttpStatus.OK);
-        //return new ResponseEntity<>(cartService.guardarCart(cart),HttpStatus.OK);
     }
     @GetMapping("/listarRestaurant")
-    public List<RestaurantDto> listarRestaurants()
+    public ResponseEntity<?> listarRestaurants()
     {
-        return restaurantService.listarRestaurants();
+        return new ResponseEntity<>(restaurantService.listarRestaurants(),HttpStatus.OK);
     }
 
     @DeleteMapping("/borraRestaurant/{id}")
@@ -38,13 +37,13 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurantService.eliminarRestaurant(id),HttpStatus.OK);
     }
 
-    @GetMapping("/elegirRestaurantPorId/{id}")
+    @GetMapping("/obtenerRestaurantPorId/{id}")
     public ResponseEntity<?> obtenerPorId(@PathVariable Long id){
         return new ResponseEntity<>(restaurantService.obtenerPorId(id),HttpStatus.OK);
     }
 
     @PutMapping("/actualizaRestaurant/{id}")
-    public ResponseEntity<?> actualizarRestaurant(@RequestBody RestaurantDto restaurantDto, @PathVariable Long id)
+    public ResponseEntity<?> actualizarRestaurant(@Valid @RequestBody RestaurantDto restaurantDto, @PathVariable Long id)
     {
 
         return restaurantService.actualizarRestaurant(restaurantDto, id);
@@ -52,7 +51,7 @@ public class RestaurantController {
     }
 
     @PutMapping("/agregaPlato/{id}")
-    public ResponseEntity<?> agregaPlato (@RequestBody PlatoDto platoDto, @PathVariable Long id)
+    public ResponseEntity<?> agregaPlato (@Valid @RequestBody PlatoDto platoDto, @PathVariable Long id)
 
     {
         return new ResponseEntity<>(restaurantService.agregaPlato(platoDto, id),HttpStatus.OK);
@@ -66,7 +65,7 @@ public class RestaurantController {
     }
 
     @PutMapping("/modificaPlato/{id}")
-    public ResponseEntity<?> modificaPlato (@RequestBody PlatoDto platoDto, @PathVariable Long id)
+    public ResponseEntity<?> modificaPlato (@Valid @RequestBody PlatoDto platoDto, @PathVariable Long id)
 
     {
         return new ResponseEntity<>(restaurantService.modificaPlato(platoDto, id),HttpStatus.OK);

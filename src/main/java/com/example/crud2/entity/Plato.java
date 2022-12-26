@@ -17,7 +17,7 @@ public class Plato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private Long precio;
+    private Double precio;
     private int calorias;
 
     @Override
@@ -31,13 +31,13 @@ public class Plato {
                 '}';
     }
 
-    public Plato (String nombre, Long precio, int calorias) {
+    public Plato (String nombre, Double precio, int calorias) {
         this.nombre = nombre;
         this.precio = precio;
         this.calorias = calorias;
         }
 
-    public Plato(String nombre, Long precio, int calorias, Restaurant restaurant) {
+    public Plato(String nombre, Double precio, int calorias, Restaurant restaurant) {
         this.nombre = nombre;
         this.precio = precio;
         this.calorias = calorias;
