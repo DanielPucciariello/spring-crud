@@ -13,6 +13,6 @@ import lombok.Setter;
 public class RespRestaurantDto
 {
     private RestaurantDto restaurantDto;
-    private String mensaje;
+    private String mensajeDto;
 
 }

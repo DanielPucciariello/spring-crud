@@ -6,6 +6,7 @@ import com.example.crud2.entity.Plato;
 import com.example.crud2.entity.Restaurant;
 import com.example.crud2.repository.IRestaurantRepository;
 import com.example.crud2.service.RestaurantService;
+import org.assertj.core.internal.bytebuddy.dynamic.DynamicType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,10 +15,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.mockito.Mockito.when;
 
@@ -88,8 +86,6 @@ public class ServiceTestConMock {
 
         Assertions.assertEquals(listaEsperada.size(),listaObtenida.size());
         Assertions.assertEquals(listaEsperada,listaObtenida);
-
-
-    }
+        }
 
 }

@@ -57,11 +57,10 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurantService.agregaPlato(platoDto, id),HttpStatus.OK);
     }
 
-    @PutMapping("/eliminarPlato/{id},{id2}")
-    public ResponseEntity<?> eliminaPlato (@PathVariable Long id, @PathVariable Long id2)
-
+    @PutMapping("/eliminarPlato/{id}")
+    public ResponseEntity<?> eliminaPlato (@PathVariable Long id)
     {
-        return new ResponseEntity<>(restaurantService.eliminaPlato(id, id2),HttpStatus.OK);
+        return new ResponseEntity<>(restaurantService.eliminaPlato(id),HttpStatus.OK);
     }
 
     @PutMapping("/modificaPlato/{id}")

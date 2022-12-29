@@ -28,7 +28,7 @@ public class IntegrationTest {
         this.mockMvc.perform(MockMvcRequestBuilders.delete("/borraRestaurant/{id}",2))
                 .andDo(print())
                 .andExpect(content().contentType("application/json"))
-                .andExpect(jsonPath("$.mensaje").value("el restaurant no existe"))
+                .andExpect(jsonPath("$.mensajeDto").value("borrado exitoso"))
                 .andReturn();
     }
 

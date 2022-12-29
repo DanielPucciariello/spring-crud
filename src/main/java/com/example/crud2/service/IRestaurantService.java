@@ -2,10 +2,7 @@ package com.example.crud2.service;
 
 import com.example.crud2.dto.request.PlatoDto;
 import com.example.crud2.dto.request.RestaurantDto;
-import com.example.crud2.dto.response.RespListaRest;
-import com.example.crud2.dto.response.RespRestListaPlatos;
-import com.example.crud2.dto.response.RespRestaurantDto;
-import com.example.crud2.dto.response.Respuesta;
+import com.example.crud2.dto.response.*;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
@@ -24,9 +21,11 @@ public interface IRestaurantService {
 
      RespRestaurantDto agregaPlato (PlatoDto platoDto, Long id);
 
-     RespRestaurantDto eliminaPlato (Long id, Long id2);
-     Respuesta modificaPlato (PlatoDto platoDto, Long id);
-     List<PlatoDto> platoConMenosCalorias ();
+
+     RespuestaDto eliminaPlato (Long id);
+     RespuestaDto modificaPlato (PlatoDto platoDto, Long id);
+
+     List<PlatoRestaurantDto> platoConMenosCalorias ();
      RespRestListaPlatos listaDePlatosPorRestaurantOrdenada (Long id);
 
 }

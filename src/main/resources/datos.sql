@@ -10,6 +10,7 @@ VALUES
      (3,'Dalal','José Bonifacio 499','011 15-3880-7529'),
      (4,'Pucará','Senillosa 493','011 4902-4975');
 
+
 INSERT INTO `platos`
 (`id`,`nombre`,`precio`,`calorias`,`restaurant_id`)
 VALUES
