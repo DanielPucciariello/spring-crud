@@ -16,7 +16,9 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-public class RestaurantService implements IRestaurantService, IPlatoService
+public class
+
+RestaurantService implements IRestaurantService, IPlatoService
 {
     //Hago la inyección del repositorio de Restaurant y Plato
     private IRestaurantRepository restaurantRepository;

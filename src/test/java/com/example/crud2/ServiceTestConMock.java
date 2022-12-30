@@ -2,6 +2,7 @@ package com.example.crud2;
 
 import com.example.crud2.dto.request.PlatoDto;
 import com.example.crud2.dto.request.RestaurantDto;
+import com.example.crud2.dto.response.RespRestaurantDto;
 import com.example.crud2.entity.Plato;
 import com.example.crud2.entity.Restaurant;
 import com.example.crud2.repository.IRestaurantRepository;
@@ -87,5 +88,29 @@ public class ServiceTestConMock {
         Assertions.assertEquals(listaEsperada.size(),listaObtenida.size());
         Assertions.assertEquals(listaEsperada,listaObtenida);
         }
+
+    @Test
+    void obtenerPorIdTestOK()
+    {
+
+        //Arrange
+
+        Optional <Restaurant> restaurant = Optional.of(new Restaurant("Guerrin", "Av. Corrientes 1368", "011 4371-8141"));
+        RespRestaurantDto respRestaurantDtoEsperado = new RespRestaurantDto();
+        respRestaurantDtoEsperado.setRestaurantDto(new RestaurantDto("Guerrin", "Av. Corrientes 1368", "011 4371-8141"));
+        Long id = 5L;
+
+        //Act
+
+        when (restaurantRepository.findById(id)).thenReturn(restaurant);
+        RespRestaurantDto respRestaurantDtoObtenido=restaurantService.obtenerPorId(id);
+
+        //Assert
+
+        Assertions.assertEquals(respRestaurantDtoEsperado.getRestaurantDto(),respRestaurantDtoObtenido.getRestaurantDto());
+
+    }
+
+
 
 }

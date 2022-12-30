@@ -110,4 +110,5 @@ class Crud2ApplicationTests {
                 assertEquals(respuestaDtoEsperada.getMensaje(),respuestaDtoObtenida.getMensaje());
 
     }
+
 }

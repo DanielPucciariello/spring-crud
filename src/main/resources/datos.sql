@@ -8,7 +8,8 @@ VALUES
      (1,'El mosquito','Av. José María Moreno 907','011 4925-3340'),
      (2,'Los Chanchitos','Av. Angel Gallardo 601','011 4854-4030'),
      (3,'Dalal','José Bonifacio 499','011 15-3880-7529'),
-     (4,'Pucará','Senillosa 493','011 4902-4975');
+     (4,'Pucará','Senillosa 493','011 4902-4975'),
+     (5,'Guerrin','Av. Corrientes 1368','011 4371-8141');
 
 
 INSERT INTO `platos`
